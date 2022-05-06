@@ -8,7 +8,7 @@
 */
 
 pipeline {
-    //agent { label "generic-jenkins-slave" }
+    agent { label "master" }
 
     parameters {
         string(name: 'BRANCH', defaultValue: 'master')

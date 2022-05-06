@@ -8,12 +8,12 @@
 */
 
 pipeline {
-    agent { label "generic-jenkins-slave" }
+    //agent { label "generic-jenkins-slave" }
 
     parameters {
         string(name: 'BRANCH', defaultValue: 'master')
         string(name: 'PROJECT_GIT_URL', defaultValue: 'https://github.com/emanuelemellace/WorkShopCI.git')
-        credentials(name: 'GIT_CREDENTIALS', defaultValue: 'user-git', credentialType: "Username with password", description: 'bitbucket.nexicloud.it credentials')
+        credentials(name: 'GIT_CREDENTIALS', defaultValue: 'GIT_USER', credentialType: "Username with password", description: 'bitbucket.nexicloud.it credentials')
     }
 
     stages{

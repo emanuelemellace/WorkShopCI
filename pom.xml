@@ -60,15 +60,18 @@
 					<plugin>
 						<groupId>org.jacoco</groupId>
 						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.4</version>
 						<executions>
 							<execution>
-								<id>prepare-agent</id>
+								<id>jacoco-initialize</id>
+								<phase>initialize</phase>
 								<goals>
 									<goal>prepare-agent</goal>
 								</goals>
 							</execution>
 							<execution>
-								<id>report</id>
+								<id>jacoco-report</id>
+								<phase>prepare-package</phase>
 								<goals>
 									<goal>report</goal>
 								</goals>

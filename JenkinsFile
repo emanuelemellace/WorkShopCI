@@ -19,7 +19,7 @@ pipeline {
     stages{
         stage('Checkout Maven project') {
             steps {
-                cleanWs(deleteDirs: true, disableDeferredWipeout: true)
+                cleanWs(deleteDirs: true)
                 checkout([$class: 'GitSCM',
                 branches: [[name: params.BRANCH]],
                 gitTool: 'git',

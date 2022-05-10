@@ -56,22 +56,20 @@ pipeline {
                 mavenOpts: '-Xmx512m -XX:MaxPermSize=1024m'){
                     withSonarQubeEnv('SonarQube') {
                         sh 'mvn -f pom.xml sonar:sonar'
+						sh 'mvn sonar:sonar -Dsonar.projectKey=workshop-mellace'
                     }
                 }
             }
         }
-
+/*
         stage('Wait for Quality Gate') {
             steps {
-                /*
-                It's a Best Practice to use timeout
-                */
                 timeout(time: 5, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
             }
         }
-
+*/
         stage('Upload to Artifactory'){
             steps {
                 withMaven(maven: 'maven-3.3.9', 

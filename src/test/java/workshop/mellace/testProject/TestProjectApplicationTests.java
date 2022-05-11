@@ -8,6 +8,8 @@ class TestProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
+		TestProjectApplication tpa = new TestProjectApplication();
+		//TestProjectApplication.main(null);
 	}
 
 }

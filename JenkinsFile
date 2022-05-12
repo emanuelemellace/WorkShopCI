@@ -82,6 +82,7 @@ pipeline {
 		
     }
 
+/*
     post {
         always {
             emailext body: "<b>Number Build:</b><br> #${BUILD_NUMBER}<br><br><b>Result Build:</b><br>${currentBuild.currentResult}<br><br><b>Name Build:</b><br>${JOB_NAME}<br><br><b>URL Build:</b><br>${BUILD_URL}<br><br><b>Build Console URL:</b><br>${BUILD_URL}console", 

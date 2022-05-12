@@ -56,7 +56,6 @@ pipeline {
                 mavenOpts: '-Xmx512m -XX:MaxPermSize=1024m'){
                     withSonarQubeEnv('SonarQube') {
                         sh 'mvn -f pom.xml sonar:sonar'
-						sh 'mvn sonar:sonar -Dsonar.projectKey=workshop-mellace'
                     }
                 }
             }
@@ -69,13 +68,14 @@ pipeline {
                 }
             }
         }
-*/
+ */       
         stage('Upload to Artifactory'){
             steps {
                 withMaven(maven: 'maven-3.3.9', 
                 mavenSettingsConfig: 'maven-3.3.9-settings-nexicloud.xml', 
                 mavenOpts: '-Xmx512m -XX:MaxPermSize=1024m') {
                     sh 'mvn -f pom.xml deploy'
+                    sh 'curl -o target/worshop-mellace-project.jar http://artifactory:8081/artifactory/example-repo-local/worshop-mellace-project.jar'
                 }
             }
         }

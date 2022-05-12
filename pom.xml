@@ -125,12 +125,12 @@
 		<repository>
 			<id>central</id>
 			<name>a514068b64ff-releases</name>
-			<url>http://localhost:8081/artifactory/maven</url>
+			<url>http://artifactory:8081/artifactory/maven</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>a514068b64ff-snapshots</name>
-			<url>http://localhost:8081/artifactory/maven</url>
+			<url>http://artifactory:8081/artifactory/maven</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
